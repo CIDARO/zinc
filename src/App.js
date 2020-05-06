@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import Header from './components/Header';
 import ERC20Faucet from './components/ERC20Faucet';
 import ERC721Faucet from './components/ERC721Faucet';
@@ -12,6 +12,19 @@ function App() {
   const web3Context = useWeb3Injected();
 
   let { accounts, networkName, lib, connected } = web3Context;
+
+  const requestAuth = async web3Context => {
+    try {
+      await web3Context.requestAuth();
+      accounts = web3Context.accounts;
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  const requestAccess = useCallback(() => requestAuth(web3Context), []);
+
+  requestAccess();
 
   const faucet721 = new lib.eth.Contract(erc721faucet, getERC721FaucetAddress(networkName));
 
