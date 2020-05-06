@@ -15,8 +15,11 @@ function App() {
   let accounts, networkName, lib, connected = null;
   let faucet721 = null;
   if (web3Context) {
-    let { accounts, networkName, lib, connected } = web3Context;
-    let faucet721 = new lib.eth.Contract(erc721faucet, getERC721FaucetAddress(networkName));
+    accounts = web3Context.accounts;
+    networkName = web3Context.networkName;
+    lib = web3Context.lib;
+    connected = web3Context.connected;
+    faucet721 = new lib.eth.Contract(erc721faucet, getERC721FaucetAddress(networkName));
   }
 
   const requestAuth = async web3Context => {
