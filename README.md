@@ -13,8 +13,7 @@
   <p>
     <a href="#status"><strong>Status</strong></a> ·
     <a href="#description"><strong>Description</strong></a> ·
-    <a href="#features"><strong>Features</strong></a> ·
-    <a href="#install"><strong>Install</strong></a> ·
+    <a href="#guide"><strong>Guide</strong></a> ·
     <a href="#contributing"><strong>Contributing</strong></a>
   </p>
 </div>
@@ -23,7 +22,19 @@
 
 ### Status
 
-**Zinc** is currently in **alpha** version. It has never been released in production and currently it's only an idea that I'm developing. Please, please, please, **do not** use this in production!
+**Zinc** is currently in **alpha** version. It has never been released and we are currently developing it.
+
+---
+
+### Description
+
+**Zinc** is an Open Source ERC-20 + ERC-721 Ethereum Testnet faucet. It allows developers to easily mint batches of ERC-20 and ERC-721 tokens using a simple UI.
+
+---
+
+### Guide
+
+TBC.
 
 ---
 
