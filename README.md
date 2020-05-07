@@ -7,7 +7,7 @@
     Open Source ERC-20 + ERC-721 Ethereum Testnet faucet.
   </p>
   <p>
-    version 0.1.0-alpha
+    version 1.0.0-beta
   </p>
   <br/>
   <p>
@@ -23,7 +23,7 @@
 
 ## Status
 
-**Zinc** is currently in **alpha** version. It has never been released and we are currently developing it.
+**Zinc** is currently in **beta** version because we just released it to the public.
 
 ---
 
