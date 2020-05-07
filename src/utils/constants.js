@@ -25,3 +25,6 @@ export const getERC20FaucetAddress = (network) => {
             return null;
     }
 }
+
+export const GITHUB_URL = 'https://github.com/cidaro/zinc';
+export const CIDARO_URL = 'https://site.cidaro.com/en/';
