@@ -16,13 +16,17 @@ function App() {
   let accounts, networkName, lib, connected = null;
   let faucet721 = null;
   let faucet20 = null;
+  let faucet20address = null;
+  let faucet721address = null;
   if (web3Context) {
     accounts = web3Context.accounts;
     networkName = web3Context.networkName;
     lib = web3Context.lib;
     connected = web3Context.connected;
-    faucet721 = new lib.eth.Contract(erc721faucet, getERC721FaucetAddress(networkName));
-    faucet20 = new lib.eth.Contract(erc20faucet, getERC20FaucetAddress(networkName));
+    faucet721address = getERC721FaucetAddress(networkName);
+    faucet20address = getERC20FaucetAddress(networkName);
+    faucet721 = new lib.eth.Contract(erc721faucet, faucet721address);
+    faucet20 = new lib.eth.Contract(erc20faucet, faucet20address);
   }
 
   const requestAuth = async web3Context => {
@@ -45,8 +49,8 @@ function App() {
         <Disclaimer connected={connected} />
       </div>
       <div className="flex flex-col md:flex-row items-center justify-center mt-4 p-4">
-        <ERC20Faucet currentNetwork={networkName} connected={connected} account={accounts ? accounts[0] : ''} web3={lib} contract={faucet20} />
-        <ERC721Faucet currentNetwork={networkName} connected={connected} account={accounts ? accounts[0] : ''} web3={lib} contract={faucet721} />
+        <ERC20Faucet currentNetwork={networkName} connected={connected} account={accounts ? accounts[0] : ''} web3={lib} contract={faucet20} contractAddress={faucet20address} />
+        <ERC721Faucet currentNetwork={networkName} connected={connected} account={accounts ? accounts[0] : ''} web3={lib} contract={faucet721} contractAddress={faucet20address} />
       </div>
       <Footer />
     </div>

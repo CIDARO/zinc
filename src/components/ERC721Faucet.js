@@ -66,7 +66,7 @@ export default class ERC721Faucet extends Component {
                         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full" type="button" onClick={() => this.mintTokens()}>
                             Mint
                         </button>
-                        { this.props.currentNetwork !== 'Rinkeby' && this.props.currentNetwork !== 'Ropsten' ? <p className="text-red-500 text-xs italic mt-2">Minting not available for the {this.props.currentNetwork} network.</p> : null}
+                        { this.props.currentNetwork !== 'Rinkeby' && this.props.currentNetwork !== 'Ropsten' ? <p className="text-red-500 text-xs italic mt-2">Minting not available for the {this.props.currentNetwork} network.</p> : <p className="text-xs italic mt-2">ERC-721 contract address: {this.props.contractAddress}.</p>}
                     </div>
                 </form>
             </div>
