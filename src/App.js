@@ -10,25 +10,25 @@ import erc20faucet from './utils/erc20faucet.json';
 import { getERC721FaucetAddress, getERC20FaucetAddress } from './utils/constants';
 
 function App() {
-
+  // Use web3 injected from browser
   const web3Context = useWeb3Injected();
-
-  let accounts, networkName, lib, connected = null;
-  let faucet721 = null;
-  let faucet20 = null;
-  let faucet20address = null;
-  let faucet721address = null;
+  // Initialize null variable
+  let accounts, networkName, lib, connected, faucet721, faucet20, faucet721address, faucet20address = null;
+  // If the web3 context is available, initialize variables
   if (web3Context) {
+    // Retrieve accounts, network name, lib (web3) and if it's connected or not
     accounts = web3Context.accounts;
     networkName = web3Context.networkName;
     lib = web3Context.lib;
     connected = web3Context.connected;
+    // Get the faucets addresses from the network name
     faucet721address = getERC721FaucetAddress(networkName);
     faucet20address = getERC20FaucetAddress(networkName);
+    // Initialize the contracts
     faucet721 = new lib.eth.Contract(erc721faucet, faucet721address);
     faucet20 = new lib.eth.Contract(erc20faucet, faucet20address);
   }
-
+  // Request authorization to use this app
   const requestAuth = async web3Context => {
     try {
       await web3Context.requestAuth();
@@ -37,9 +37,8 @@ function App() {
       console.error(e);
     }
   };
-
+  // Use callback for React Hook
   const requestAccess = useCallback(() => requestAuth(web3Context), []);
-
   requestAccess();
 
   return (

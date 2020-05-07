@@ -14,23 +14,29 @@ export default class ERC721Faucet extends Component {
     }
 
     mintTokens = async () => {
+        // Return if the user is not connected
         if (!this.props.connected) {
             cogoToast.error('You are not connected to Metamask.');
             return;
         }
+        // Check if the current network is either Rinkeby or Ropsten
         if (this.props.currentNetwork === 'Rinkeby' || this.props.currentNetwork === 'Ropsten') {
+            // Return if no address is present
             if (!this.state.address) {
                 cogoToast.error('Address missing.');
                 return;
             }
+            // Return if the amount is non-existant or less than 1
             if (!this.state.amount || this.state.amount < 1) {
                 cogoToast.error('Invalid amount (must be greater than 1).');
                 return;
             }
+            // Estimate the gas for the transaction
             const gas = await this.props.contract.methods.mint(this.state.address, this.state.amount).estimateGas({
                 from: this.props.account,
                 gasPrice: 9000000000
             });
+            // Call the mint method
             await this.props.contract.methods.mint(this.state.address, this.state.amount).send({
                 from: this.props.account,
                 gas,
@@ -60,7 +66,7 @@ export default class ERC721Faucet extends Component {
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="amount">
                             Amount
                         </label>
-                        <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="amount" type="number" placeholder="Amount" value={this.state.amount} onChange={(event) => this.setState({amount: event.target.value})} />
+                        <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="amount" type="number" placeholder="Amount" value={this.state.amount} step={1} onChange={(event) => this.setState({amount: event.target.value})} />
                     </div>
                     <div className="flex items-center flex-col justify-between">
                         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full" type="button" onClick={() => this.mintTokens()}>
