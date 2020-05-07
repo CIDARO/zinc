@@ -50,7 +50,7 @@ function App() {
       </div>
       <div className="flex flex-col md:flex-row items-center justify-center mt-4 p-4">
         <ERC20Faucet currentNetwork={networkName} connected={connected} account={accounts ? accounts[0] : ''} web3={lib} contract={faucet20} contractAddress={faucet20address} />
-        <ERC721Faucet currentNetwork={networkName} connected={connected} account={accounts ? accounts[0] : ''} web3={lib} contract={faucet721} contractAddress={faucet20address} />
+        <ERC721Faucet currentNetwork={networkName} connected={connected} account={accounts ? accounts[0] : ''} web3={lib} contract={faucet721} contractAddress={faucet721address} />
       </div>
       <Footer />
     </div>
