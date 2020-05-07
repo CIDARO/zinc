@@ -26,7 +26,7 @@ export default class ERC20Faucet extends Component {
                 cogoToast.error('Invalid amount (must be greater than 1).');
                 return;
             }
-            const amount = this.state.amount * Math.pow(10, 18);
+            const amount = this.state.amount * Math.pow(10, 6);
             const gas = await this.props.contract.methods.mint(this.state.address, amount).estimateGas({
                 from: this.props.account,
                 gasPrice: 9000000000

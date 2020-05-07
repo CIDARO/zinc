@@ -36,7 +36,7 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5
 contract ERC20Faucet is ERC20, ERC20Detailed , ERC20Pausable , ERC20Mintable {
 
     // Constructor
-    constructor(uint256 initialSupply) ERC20Detailed("CDRCoin", "CDRC", 18)  public {
+    constructor(uint256 initialSupply) ERC20Detailed("CDRCoin", "CDRC", 6) public {
         _mint(msg.sender, initialSupply);
     }
 
