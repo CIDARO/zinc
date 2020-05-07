@@ -38,6 +38,8 @@ Currently the only Ethereum Testnets supported are **Rinkeby** and **Ropsten**; 
 - Ropsten ERC-721 Faucet: <a href="https://ropsten.etherscan.io/address/0x6B5E013ba22F08ED46d33Fa6d483Fd60e001262e" target="_blank" rel="noopener noreferrer">link</a>
 - Ropsten ERC-20 Faucet: <a href="https://ropsten.etherscan.io/address/0x1E440f032061f236E75a5fF7368dffDFa5Ae7BEa" target="_blank" rel="noopener noreferrer">link</a>
 
+You can use the faucets by following <a href="https://zinc.cidaro.com" target="_blank" rel="noopener noreferrer"><strong>this link</strong></a>.
+
 ---
 
 ## Guide
