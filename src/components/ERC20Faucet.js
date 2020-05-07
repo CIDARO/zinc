@@ -26,7 +26,15 @@ export default class ERC20Faucet extends Component {
                 cogoToast.error('Invalid amount (must be greater than 1).');
                 return;
             }
-            // Call contract functions here
+            const gas = await this.props.contract.methods.mint(this.state.address, this.state.amount).estimateGas({
+                from: this.props.account,
+                gasPrice: 9000000000
+            });
+            await this.props.contract.methods.mint(this.state.address, this.state.amount).send({
+                from: this.props.account,
+                gas,
+                gasPrice: 9000000000
+            });
         } else {
             cogoToast.error(`Minting not allowed for ${this.props.currentNetwork} network.`);
         }

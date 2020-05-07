@@ -11,6 +11,7 @@
   </p>
   <br/>
   <p>
+    <a href="https://zinc.cidaro.com" target="_blank" rel="noopener noreferrer"><strong>Faucets</strong></a> ·
     <a href="#status"><strong>Status</strong></a> ·
     <a href="#description"><strong>Description</strong></a> ·
     <a href="#guide"><strong>Guide</strong></a> ·
