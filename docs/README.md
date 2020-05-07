@@ -1,6 +1,6 @@
 <div align="center">
   <br/>
-  <img src="./../zinc.png" width="200" />
+  <img src="./zinc.png" width="200" />
   <br/>
   <br/>
   <p>
