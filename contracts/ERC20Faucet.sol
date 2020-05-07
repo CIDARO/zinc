@@ -5,7 +5,7 @@ pragma solidity >0.5.0;
 *  This smart contract is built on:
    - OpenZeppelin Github library
 *  The faucet is currently running on Rinkeby and Ropsten
-*  Visit our website https://site.cidaro.com/ and our Github repositories https://github.com/CIDARO-srl
+*  Visit our website https://site.cidaro.com/ and our Github repositories https://github.com/CIDARO
 */
 
 //Import
