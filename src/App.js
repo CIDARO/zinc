@@ -6,7 +6,8 @@ import ERC721Faucet from './components/ERC721Faucet';
 import Footer from './components/Footer';
 import { useWeb3Injected } from '@openzeppelin/network/react';
 import erc721faucet from './utils/erc721faucet.json';
-import { getERC721FaucetAddress } from './utils/constants';
+import erc20faucet from './utils/erc20faucet.json';
+import { getERC721FaucetAddress, getERC20FaucetAddress } from './utils/constants';
 
 function App() {
 
@@ -14,12 +15,14 @@ function App() {
 
   let accounts, networkName, lib, connected = null;
   let faucet721 = null;
+  let faucet20 = null;
   if (web3Context) {
     accounts = web3Context.accounts;
     networkName = web3Context.networkName;
     lib = web3Context.lib;
     connected = web3Context.connected;
     faucet721 = new lib.eth.Contract(erc721faucet, getERC721FaucetAddress(networkName));
+    faucet20 = new lib.eth.Contract(erc20faucet, getERC20FaucetAddress(networkName));
   }
 
   const requestAuth = async web3Context => {
@@ -42,7 +45,7 @@ function App() {
         <Disclaimer connected={connected} />
       </div>
       <div className="flex flex-col md:flex-row items-center justify-center mt-4 p-4">
-        <ERC20Faucet currentNetwork={networkName} connected={connected} account={accounts ? accounts[0] : ''} web3={lib} />
+        <ERC20Faucet currentNetwork={networkName} connected={connected} account={accounts ? accounts[0] : ''} web3={lib} contract={faucet20} />
         <ERC721Faucet currentNetwork={networkName} connected={connected} account={accounts ? accounts[0] : ''} web3={lib} contract={faucet721} />
       </div>
       <Footer />
