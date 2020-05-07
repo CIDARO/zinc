@@ -33,10 +33,10 @@
 
 Currently the only Ethereum Testnets supported are **Rinkeby** and **Ropsten**; the contracts are available in the **contracts** folder or at the following Etherscan links:
 
-- Rinkeby ERC721Faucet: <a href="https://rinkeby.etherscan.io/address/0x11FA7f0C8B90bA7137cDaE6261e82e0cAbDE9632" target="_blank" rel="noopener noreferrer">link</a>
-- Rinkeby ERC20Faucet: <a href="https://rinkeby.etherscan.io/address/0xA5Ac77dE3D32655F1bb6DeCD75b4111282594962" target="_blank" rel="noopener noreferrer">link</a>
-- Ropsten ERC721Faucet: <a href="https://ropsten.etherscan.io/address/0x6B5E013ba22F08ED46d33Fa6d483Fd60e001262e" target="_blank" rel="noopener noreferrer">link</a>
-- Ropsten ERC20Faucet: <a href="https://ropsten.etherscan.io/address/0x1E440f032061f236E75a5fF7368dffDFa5Ae7BEa" target="_blank" rel="noopener noreferrer">link</a>
+- Rinkeby ERC-721 Faucet: <a href="https://rinkeby.etherscan.io/address/0x11FA7f0C8B90bA7137cDaE6261e82e0cAbDE9632" target="_blank" rel="noopener noreferrer">link</a>
+- Rinkeby ERC-20 Faucet: <a href="https://rinkeby.etherscan.io/address/0xA5Ac77dE3D32655F1bb6DeCD75b4111282594962" target="_blank" rel="noopener noreferrer">link</a>
+- Ropsten ERC-721 Faucet: <a href="https://ropsten.etherscan.io/address/0x6B5E013ba22F08ED46d33Fa6d483Fd60e001262e" target="_blank" rel="noopener noreferrer">link</a>
+- Ropsten ERC-20 Faucet: <a href="https://ropsten.etherscan.io/address/0x1E440f032061f236E75a5fF7368dffDFa5Ae7BEa" target="_blank" rel="noopener noreferrer">link</a>
 
 ---
 
